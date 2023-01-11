@@ -1,0 +1,9 @@
+ th, td {
+    border: 1px solid black;
+  }
+  #main
+  {
+    padding: 5%;
+    border: 5px solid grey;
+    border-width: 20px;
+  }

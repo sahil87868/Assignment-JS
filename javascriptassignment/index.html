@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="main">
+    <table style="border: 1px solid black;">
+        <tr style="border: 1px solid black;" >
+            <th style="background-color: gainsboro;">Product info</th>
+            <th style="background-color: gainsboro;">Quantity</th>
+            <th style="background-color: gainsboro;">Price(per unit)</th>
+            <th style="background-color: gainsboro;">Price(Subtotal)</th>
+            <th style="background-color: gainsboro;">  </th>
+        </tr>
+        <tr id="inp1">
+            <td>
+                <img src="images/th.jpg" alt="" style="width: 10%;border-radius: 50%;">
+                <br>
+                 <b>window Hardware- decorative Holdbacks-mocha</b></td>
+            <td>
+                <input type="number" name="q" id="quan" oninput="myfunc()">
+            </td>
+            <td> 
+                <input type="number" name="p" id="price" oninput="myfunc()">
+
+            </td>
+            <td><b id="total"></b></td>
+            <td><button style="background-color:orangered;padding: 5px;color: white;" id="rem">Remove</button></td>
+           
+
+        </tr>
+        <tr id="inp1">
+            <td>
+                <img src="images/clip.jpg" alt="" style="width: 10%;border-radius: 50%;">
+                <br>
+                 <b>Woven Trellis window Hardware-Clip Rings Bronze</b></td>
+            
+            <td>
+                <input type="number" name="q" id="quans" oninput="myfunc()">
+            </td>
+            <td> 
+                <input type="number" name="p" id="prices" oninput="myfunc()">
+   
+            </td>
+            <td><b id="totals" ></b></td>
+            <td><button id="remove1" style="background-color:orangered;padding: 5px;color: white;" onclick="function()">Remove</button></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td ><b id="Product" onchange="total()"></b></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<script>
+    function myfunc() {
+        var Price=document.getElementById('price').value;
+        var Prices=document.getElementById('prices').value;
+        var quan=document.getElementById('quan').value;
+        var quans=document.getElementById('quans').value;
+        var total = Price * quan;
+        var totals = Prices * quans;
+        document.getElementById("total").innerHTML = total;    
+        document.getElementById("totals").innerHTML = totals;  
+        
+         sum = +(total) +  +(totals) ;
+        document.getElementById("Product").innerHTML=sum;
+    }
+    $(document).ready(function(){
+  $("button").click(function(){
+    $("#inp1").remove();
+  });
+});
+
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#inp2").remove();
+  });
+});
+    
+    
+ 
+</script>
+</body>
+</html>
